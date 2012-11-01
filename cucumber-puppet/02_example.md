@@ -30,6 +30,7 @@
 			| htop       | installed |
 			| etckeeper  | installed |
 			| sudo       | latest    |
+			...
 
 !SLIDE top
 
@@ -78,7 +79,7 @@
 
 !SLIDE top
 	@@@ cucumber
-	Scenario: vulkan (main production)
+	Scenario: vulkan
 		Given a node specified
 				by "features/nodes/vulkan.yaml"
 		When I compile the catalog
@@ -150,7 +151,7 @@
 				| vulkan.heute-kaufen.de     |
 				| ferenginar.heute-kaufen.de |
 				| betazed.heute-kaufen.de    |
-				| khitomer.plusserver.de     |
-				| romulus.plusserver.de      |
-				| troyius.plusserver.de      |
+				| romulus.heute-kaufen.de    |
+				| khitomer.heute-kaufen.de   |
+				| troyius.heute-kaufen.de    |
 

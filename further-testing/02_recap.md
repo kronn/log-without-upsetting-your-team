@@ -1,8 +1,10 @@
 !SLIDE transition=fade
 
+&nbsp;
+
 !SLIDE transition=fade bullets incremental
 
-# conclusion
+# Conclusion
 ## personal, of course
 
 !SLIDE bullets incremental
