@@ -1,0 +1,12 @@
+{
+  "name": "TestDrivenInfrastruture",
+  "sections": [
+    {"section":"title"},
+    {"section":"about"},
+    {"section":"puppet"},
+    {"section":"cucumber-puppet"},
+    {"section":"other-approaches"},
+    {"section":"further-testing,"},
+    {"section":"thanks"}
+  ]
+}
