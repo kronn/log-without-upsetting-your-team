@@ -15,7 +15,7 @@ Ubuntu
 Ubuntu Condensed
  */
 
-.content h1, .content h2, .content ul li {
+.content p, .content h1, .content h2, .content ul li {
   font-family:"Ubuntu Condensed", "Optima", sans-serif;
 }
 .content pre, code {
