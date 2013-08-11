@@ -1,12 +1,15 @@
 {
-  "name": "TestDrivenInfrastruture",
+  "name": "How to log without upsetting your team",
   "sections": [
-    {"section":"title"},
+    {"section":"intro"},
     {"section":"about"},
-    {"section":"puppet"},
-    {"section":"cucumber-puppet"},
-    {"section":"other-approaches"},
-    {"section":"further-testing"},
+    {"section":"title"},
+
+    {"section":"bughunt"},
+    {"section":"logging"},
+    {"section":"social"},
+    {"section":"success"},
+
     {"section":"thanks"}
   ]
 }

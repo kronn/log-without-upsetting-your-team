@@ -1,0 +1,66 @@
+.title_slide h1 {
+  font-size:180px;
+}
+
+.section_title h1 {
+  color:#336;
+  font-weight:bold;
+}
+
+/*
+Bitstream Charter
+Nanum Gothic
+Sawasdee
+Ubuntu
+Ubuntu Condensed
+ */
+
+.content p, .content h1, .content h2, .content ul li {
+  font-family:"Ubuntu", "Optima", sans-serif;
+}
+.content pre, code {
+  font-family:"Inconsolata", "Monaco", monospace;
+}
+code {
+  font-size: 80%;
+}
+.content ul li h2 {
+  font-size: 100%;
+}
+.content h4 {
+  text-align:right;
+}
+
+s {
+  color: #999;
+}
+
+.no-bullets ul li {
+  display: inline;
+  list-style: none outside none;
+  margin: 0;
+  padding: 0;
+}
+
+
+.no-bullets ul {
+  padding: 0 50px;
+  text-align: center;
+}
+
+.no-bullets ul li p {
+  margin-bottom: 50px;
+}
+
+.top {
+  margin-top:70px !important;
+}
+
+.scaled img {
+  width: 800px !important;
+}
+
+.image img {
+  width: 600px !important;
+  height: 622px !important;
+}
