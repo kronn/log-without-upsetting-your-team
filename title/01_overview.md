@@ -1,30 +1,23 @@
-!SLIDE transition=fade center title_slide
-
-This is a showoff presentation.
-
-use the arrow keys to navigate or press `?` for help
-
-The Talk has been given on November 1<sup>st</sup> 2012 at the<br />
-<a href="http://rugb.de">Ruby UserGroup Berlin</a>.
+!SLIDE
 
 !SLIDE transition=fade
 
-# Test-Driven Infrastucture
-## a talk with real-world examples
+# How to log without upsetting your team
+## technical and social aspects of `IO.puts`
 
 !SLIDE bullets incremental
 # Overview
 
-* Puppet
-* Cucumber-Puppet
-* other approaches
-* further testing
+* The Bug
+* The Log
+* The Team
+* The Solution
 
 !SLIDE bullets
-#   Overview
+# Overview
 
-* system under test
-* primary test tool
-* other tools
-* uninvented tools
+* Temptation
+* Documentation
+* Implication
+* Salvation
 
