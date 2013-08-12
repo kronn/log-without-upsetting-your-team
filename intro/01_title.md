@@ -6,5 +6,5 @@
 
 * One bug got squashed.
 
-* This is the last slide I will read completely
+* This is the last slide I will read completely.
 

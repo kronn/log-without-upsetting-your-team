@@ -74,5 +74,3 @@
 	) do |name, start, finish, id, payload|
 	  payment_logger.info payload[:sql]
 	end
-
-

@@ -1,9 +1,11 @@
 !SLIDE
 
+&nbsp;
+
 !SLIDE transition=fade
 
 # How to log without upsetting your team
-## technical and social aspects of `IO.puts`
+## technical and social aspects of `logger.debug`
 
 !SLIDE bullets incremental
 # Overview
@@ -21,3 +23,10 @@
 * Implication
 * Salvation
 
+!SLIDE bullets
+# Overview
+
+* bughunt
+* logging
+* social
+* success

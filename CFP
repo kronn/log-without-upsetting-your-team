@@ -1,0 +1,72 @@
+Rough outline of the talk, based on a true story:
+
+SHORT VERSION || ABSTRACT || TL;DR
+Developers tend to use the main application logging facility to get more information when debugging.
+Putting all in one place leads to more clutter which is - among other problems - harder to parse. 
+I want to show a way out, using an old but underused technology. The solution has the main benefit (motivation, actually) to improve the team culture of Developers and Operations.
+
+LONG VERSION || MOST CONTENT BEFORE CONVERTING TO SLIDES
+There are situations in which you need to know more about an error. One
+of the standard tools in such situations is logging. With the presence
+of the production.log it's tempting to just pour messages in there.
+Next, you want more information and think about raising the loglevel.
+
+I advise not to raise the loglevel for the whole application in this case.
+Actually, I cannot think of a good reason to make it more verbose than is is
+right now.
+
+the slides at this point would compare the standard rails logging to
+lograges more compact logging
+
+If you need better logging, then please log the things you need in a separate
+logfile. With the notification API that's been introduced with Rails 3, one can
+listen the the right events and write stuff to a file.
+
+http://railscasts.com/episodes/249-notifications-in-rails-3
+http://api.rubyonrails.org/classes/ActiveSupport/Notifications.html
+http://edgeguides.rubyonrails.org/active_support_instrumentation.html#sql-active-record
+http://mikenaberezny.com/2007/02/24/rails-logging-tips/
+
+two
+thousand
+seven
+which translates into two eterneties in internet time
+
+Code example, to be put in an initializer:
+
+  class PaymentLogger &lt; Logger
+    def format_message(severity, timestamp, progname, msg)
+      &quot;#{timestamp.to_formatted_s(:db)} #{severity} #{msg}\n&quot;;
+    end
+  end
+
+  logfile = Rails.root.join(&#x27;log&#x27;).join(&#x27;payment.log&#x27;)
+  payment_logger = PaymentLogger.new( File.open(logfile, &#x27;a&#x27;) )
+
+  ActiveSupport::Notifications.subscribe &#x27;sql.active_record&#x27; do |name, start, finish, id, payload|
+    payment_logger.info payload[:sql] 
+  end
+
+Advise to the audience:
+
+Please do not abuse the main application logfile (and -level) for such
+specialised and short-lived tasks. The main logfile is supposed to be
+parseable.
+
+If you name your logfile so that it matches log/*.log, it will be
+automatically rotated and compressed. Or whatever your Ops people 
+do with it.
+
+The idea of the talk is to use small parts of a system to point to the social
+implications, thereby hopefully improving the life of Joe Developer, 
+Jane Operations and gasp Kim DevOps.
+
+I definitely need help with the title of the talk. Regarding the duration: 
+I can strech this endlessly, but I tend to talk fast when I'm nervous. 
+So I think that 15 minutes are sufficient.
+
+There are situations in which you need to know more about an error. One
+of the standard tools in such situations is logging. With the presence
+of the production.log it's tempting to just pour messages in there.
+
+Now you have a bigger log and put that burden on the whole team.

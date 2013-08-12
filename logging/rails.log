@@ -1,0 +1,647 @@
+Processing ArticlesController#index (for 127.0.0.1 at 2013-07-09 10:30:13) [GET]
+  Parameters: {"section_id"=>"1", "action"=>"index", "controller"=>"articles"}
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `sites` [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` LIMIT 1[0m
+  [4;36;1mTheme Load (0.8ms)[0m   [0;1mSELECT * FROM `themes` WHERE (`themes`.site_id = 1 AND (active = 1)) [0m
+  [4;35;1mSection Load (2.6ms)[0m   [0mSELECT `sections`.* FROM `sections` INNER JOIN `section_translations` ON section_translations.section_id = sections.id WHERE (section_translations.title = 'Rotierende Banner' AND section_translations.locale IN ('de','root')) ORDER BY lft LIMIT 1[0m
+  [4;36;1mArticle Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `contents`[0m
+  [4;35;1mArticle Load (1.4ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 39) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC[0m
+  [4;36;1mSection Load (0.6ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 1 AND (`sections`.site_id = 1)) ORDER BY lft, lft[0m
+  [4;35;1mSite Load (0.5ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mArticle Load (1.2ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 1) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC[0m
+  [4;36;1mComment Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mUser Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+can not find custom layout "layouts/startpage"
+Rendering template within layouts/home/home
+Rendering pages/articles/show
+  [4;36;1mContentTranslation Load (5.7ms)[0m   [0;1mSELECT * FROM `content_translations` WHERE (`content_translations`.content_id = 1 AND (`content_translations`.`current` = 1 AND `content_translations`.`locale` IN ('de','root'))) [0m
+  [4;35;1mContentTranslation Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `content_translations`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `content_translations` WHERE (`content_translations`.content_id = 1 AND (`content_translations`.`current` = 1 AND `content_translations`.`locale` IN ('de','root'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `content_translations` WHERE (`content_translations`.content_id = 1 AND (`content_translations`.`current` = 1 AND `content_translations`.`locale` IN ('de','root'))) [0m
+  [4;36;1mSectionTranslation Load (0.6ms)[0m   [0;1mSELECT * FROM `section_translations` WHERE (`section_translations`.section_id = 1 AND (`section_translations`.`locale` IN ('de','root'))) [0m
+  [4;35;1mSectionTranslation Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `section_translations`[0m
+Rendered layouts/shared/_head (15.8ms)
+  [4;36;1mSection Load (2.3ms)[0m   [0;1mSELECT `sections`.* FROM `sections` INNER JOIN `section_translations` ON section_translations.section_id = sections.id WHERE (section_translations.title = 'Banner' AND section_translations.locale IN ('de','root')) ORDER BY lft LIMIT 1[0m
+  [4;35;1mArticle Load (1.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 38) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC[0m
+  [4;36;1mContentTranslation Load (1.6ms)[0m   [0;1mSELECT * FROM `content_translations` WHERE (`content_translations`.content_id = 123 AND (`content_translations`.`current` = 1 AND `content_translations`.`locale` IN ('de','root'))) [0m
+Rendered shared/_flash (0.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `content_translations` WHERE (`content_translations`.content_id = 1 AND (`content_translations`.`current` = 1 AND `content_translations`.`locale` IN ('de','root'))) [0m
+  [4;36;1mSection Load (0.5ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 1) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+Rendered layouts/shared/_login_box (19.7ms)
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT max(`sections`.updated_at) AS max_updated_at FROM `sections` [0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSELECT max(`contents`.updated_at) AS max_updated_at FROM `contents` WHERE ( (`contents`.`type` = 'Article' ) ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mSection Load (0.3ms)[0m   [0;1mSELECT * FROM `sections` WHERE ((`sections`.`site_id` = 1 AND `sections`.`parent_id` = 1)) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mArticle Load (0.3ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 3) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 3) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mSectionTranslation Load (0.2ms)[0m   [0mSELECT * FROM `section_translations` WHERE (`section_translations`.section_id = 3 AND (`section_translations`.`locale` IN ('de','root'))) [0m
+  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 3) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 3) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 3) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 3) ORDER BY lft[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `sections` WHERE ((`sections`.`site_id` = 1 AND `sections`.`parent_id` = 3)) [0m
+  [4;35;1mSection Load (0.3ms)[0m   [0mSELECT * FROM `sections` WHERE ((`sections`.`site_id` = 1 AND `sections`.`parent_id` = 3)) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mArticle Load (0.3ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 68) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 68) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mSectionTranslation Load (0.2ms)[0m   [0;1mSELECT * FROM `section_translations` WHERE (`section_translations`.section_id = 68 AND (`section_translations`.`locale` IN ('de','root'))) [0m
+  [4;35;1mSection Load (0.2ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 68) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 68) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 68) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 68) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mArticle Load (1.2ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 23) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 23) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mSectionTranslation Load (0.6ms)[0m   [0mSELECT * FROM `section_translations` WHERE (`section_translations`.section_id = 23 AND (`section_translations`.`locale` IN ('de','root'))) [0m
+  [4;36;1mSection Load (0.5ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 23) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 23) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 23) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 23) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mArticle Load (1.3ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 14) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 14) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mSectionTranslation Load (0.8ms)[0m   [0;1mSELECT * FROM `section_translations` WHERE (`section_translations`.section_id = 14 AND (`section_translations`.`locale` IN ('de','root'))) [0m
+  [4;35;1mSection Load (0.6ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 14) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 14) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 14) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 14) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mArticle Load (0.4ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 27) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 27) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mSectionTranslation Load (0.3ms)[0m   [0mSELECT * FROM `section_translations` WHERE (`section_translations`.section_id = 27 AND (`section_translations`.`locale` IN ('de','root'))) [0m
+  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 27) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 27) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 27) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 27) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mArticle Load (1.1ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 4) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 4) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mSectionTranslation Load (0.6ms)[0m   [0;1mSELECT * FROM `section_translations` WHERE (`section_translations`.section_id = 4 AND (`section_translations`.`locale` IN ('de','root'))) [0m
+  [4;35;1mSection Load (0.6ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 4) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 4) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 4) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 4) ORDER BY lft[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT count(*) AS count_all FROM `sections` WHERE ((`sections`.`site_id` = 1 AND `sections`.`parent_id` = 4)) [0m
+  [4;36;1mSection Load (1.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE ((`sections`.`site_id` = 1 AND `sections`.`parent_id` = 4)) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mArticle Load (1.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 49) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 49) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mSectionTranslation Load (0.6ms)[0m   [0mSELECT * FROM `section_translations` WHERE (`section_translations`.section_id = 49 AND (`section_translations`.`locale` IN ('de','root'))) [0m
+  [4;36;1mSection Load (0.6ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 49) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 49) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 49) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 49) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mArticle Load (1.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 50) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 50) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mSectionTranslation Load (0.6ms)[0m   [0;1mSELECT * FROM `section_translations` WHERE (`section_translations`.section_id = 50 AND (`section_translations`.`locale` IN ('de','root'))) [0m
+  [4;35;1mSection Load (0.6ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 50) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 50) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 50) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 50) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mArticle Load (0.9ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 51) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 51) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mSectionTranslation Load (0.9ms)[0m   [0mSELECT * FROM `section_translations` WHERE (`section_translations`.section_id = 51 AND (`section_translations`.`locale` IN ('de','root'))) [0m
+  [4;36;1mSection Load (0.5ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 51) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 51) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 51) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 51) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mArticle Load (0.9ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 52) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 52) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mSectionTranslation Load (0.6ms)[0m   [0;1mSELECT * FROM `section_translations` WHERE (`section_translations`.section_id = 52 AND (`section_translations`.`locale` IN ('de','root'))) [0m
+  [4;35;1mSection Load (0.5ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 52) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 52) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 52) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 52) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mArticle Load (0.9ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 53) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 53) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mSectionTranslation Load (0.7ms)[0m   [0mSELECT * FROM `section_translations` WHERE (`section_translations`.section_id = 53 AND (`section_translations`.`locale` IN ('de','root'))) [0m
+  [4;36;1mSection Load (0.4ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 53) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 53) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 53) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 53) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mArticle Load (0.9ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 54) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 54) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mSectionTranslation Load (0.6ms)[0m   [0;1mSELECT * FROM `section_translations` WHERE (`section_translations`.section_id = 54 AND (`section_translations`.`locale` IN ('de','root'))) [0m
+  [4;35;1mSection Load (0.5ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 54) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 54) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 54) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 54) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mArticle Load (0.9ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 55) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 55) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mSectionTranslation Load (0.6ms)[0m   [0mSELECT * FROM `section_translations` WHERE (`section_translations`.section_id = 55 AND (`section_translations`.`locale` IN ('de','root'))) [0m
+  [4;36;1mSection Load (0.5ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 55) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 55) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 55) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 55) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mArticle Load (0.8ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 56) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 56) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mSectionTranslation Load (0.7ms)[0m   [0;1mSELECT * FROM `section_translations` WHERE (`section_translations`.section_id = 56 AND (`section_translations`.`locale` IN ('de','root'))) [0m
+  [4;35;1mSection Load (0.5ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 56) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 56) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 56) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 56) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mArticle Load (0.9ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 8) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 8) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mSectionTranslation Load (0.6ms)[0m   [0mSELECT * FROM `section_translations` WHERE (`section_translations`.section_id = 8 AND (`section_translations`.`locale` IN ('de','root'))) [0m
+  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 8) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 8) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 8) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 8) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mArticle Load (1.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 57) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 57) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mSectionTranslation Load (0.8ms)[0m   [0;1mSELECT * FROM `section_translations` WHERE (`section_translations`.section_id = 57 AND (`section_translations`.`locale` IN ('de','root'))) [0m
+  [4;35;1mSection Load (0.6ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 57) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 57) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 57) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 57) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mArticle Load (0.8ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 58) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 58) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mSectionTranslation Load (0.6ms)[0m   [0mSELECT * FROM `section_translations` WHERE (`section_translations`.section_id = 58 AND (`section_translations`.`locale` IN ('de','root'))) [0m
+  [4;36;1mSection Load (0.4ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 58) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 58) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 58) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 58) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mArticle Load (0.9ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 66) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 66) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mSectionTranslation Load (0.6ms)[0m   [0;1mSELECT * FROM `section_translations` WHERE (`section_translations`.section_id = 66 AND (`section_translations`.`locale` IN ('de','root'))) [0m
+  [4;35;1mSection Load (0.5ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 66) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 66) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 66) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 66) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mArticle Load (0.8ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 59) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 59) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mSectionTranslation Load (0.6ms)[0m   [0mSELECT * FROM `section_translations` WHERE (`section_translations`.section_id = 59 AND (`section_translations`.`locale` IN ('de','root'))) [0m
+  [4;36;1mSection Load (0.4ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 59) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 59) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 59) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 59) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mArticle Load (0.9ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 5) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 5) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mSectionTranslation Load (0.6ms)[0m   [0;1mSELECT * FROM `section_translations` WHERE (`section_translations`.section_id = 5 AND (`section_translations`.`locale` IN ('de','root'))) [0m
+  [4;35;1mSection Load (0.5ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 5) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 5) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 5) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 5) ORDER BY lft[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT count(*) AS count_all FROM `sections` WHERE ((`sections`.`site_id` = 1 AND `sections`.`parent_id` = 5)) [0m
+  [4;36;1mSection Load (0.9ms)[0m   [0;1mSELECT * FROM `sections` WHERE ((`sections`.`site_id` = 1 AND `sections`.`parent_id` = 5)) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mArticle Load (0.3ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 70) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 70) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mSectionTranslation Load (0.2ms)[0m   [0mSELECT * FROM `section_translations` WHERE (`section_translations`.section_id = 70 AND (`section_translations`.`locale` IN ('de','root'))) [0m
+  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 70) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 70) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 70) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 70) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mArticle Load (0.3ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 76) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 76) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mSectionTranslation Load (0.2ms)[0m   [0;1mSELECT * FROM `section_translations` WHERE (`section_translations`.section_id = 76 AND (`section_translations`.`locale` IN ('de','root'))) [0m
+  [4;35;1mSection Load (0.2ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 76) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 76) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 76) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 76) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mArticle Load (0.8ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 60) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 60) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mSectionTranslation Load (0.6ms)[0m   [0mSELECT * FROM `section_translations` WHERE (`section_translations`.section_id = 60 AND (`section_translations`.`locale` IN ('de','root'))) [0m
+  [4;36;1mSection Load (0.5ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 60) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 60) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 60) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 60) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mArticle Load (0.8ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 61) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 61) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mSectionTranslation Load (0.6ms)[0m   [0;1mSELECT * FROM `section_translations` WHERE (`section_translations`.section_id = 61 AND (`section_translations`.`locale` IN ('de','root'))) [0m
+  [4;35;1mSection Load (0.5ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 61) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 61) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 61) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 61) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mArticle Load (0.9ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 62) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 62) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mSectionTranslation Load (0.5ms)[0m   [0mSELECT * FROM `section_translations` WHERE (`section_translations`.section_id = 62 AND (`section_translations`.`locale` IN ('de','root'))) [0m
+  [4;36;1mSection Load (0.4ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 62) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 62) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 62) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 62) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mArticle Load (0.9ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 63) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 63) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mSectionTranslation Load (0.6ms)[0m   [0;1mSELECT * FROM `section_translations` WHERE (`section_translations`.section_id = 63 AND (`section_translations`.`locale` IN ('de','root'))) [0m
+  [4;35;1mSection Load (0.6ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 63) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 63) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 63) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 63) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mArticle Load (1.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 64) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 64) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mSectionTranslation Load (0.6ms)[0m   [0mSELECT * FROM `section_translations` WHERE (`section_translations`.section_id = 64 AND (`section_translations`.`locale` IN ('de','root'))) [0m
+  [4;36;1mSection Load (0.6ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 64) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 64) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 64) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 64) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mArticle Load (0.9ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 25) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 25) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mSectionTranslation Load (0.7ms)[0m   [0;1mSELECT * FROM `section_translations` WHERE (`section_translations`.section_id = 25 AND (`section_translations`.`locale` IN ('de','root'))) [0m
+  [4;35;1mSection Load (0.5ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 25) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 25) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 25) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 25) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mArticle Load (0.9ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 11) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 11) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mSectionTranslation Load (0.5ms)[0m   [0mSELECT * FROM `section_translations` WHERE (`section_translations`.section_id = 11 AND (`section_translations`.`locale` IN ('de','root'))) [0m
+  [4;36;1mSection Load (0.6ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 11) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 11) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 11) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 11) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mArticle Load (0.4ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 65) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 65) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mSectionTranslation Load (0.3ms)[0m   [0;1mSELECT * FROM `section_translations` WHERE (`section_translations`.section_id = 65 AND (`section_translations`.`locale` IN ('de','root'))) [0m
+  [4;35;1mSection Load (0.4ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 65) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 65) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 65) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 65) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mArticle Load (0.9ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 26) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 26) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mSectionTranslation Load (0.5ms)[0m   [0mSELECT * FROM `section_translations` WHERE (`section_translations`.section_id = 26 AND (`section_translations`.`locale` IN ('de','root'))) [0m
+  [4;36;1mSection Load (0.5ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 26) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 26) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 26) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 26) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mArticle Load (1.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 79) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 79) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mSectionTranslation Load (0.8ms)[0m   [0;1mSELECT * FROM `section_translations` WHERE (`section_translations`.section_id = 79 AND (`section_translations`.`locale` IN ('de','root'))) [0m
+  [4;35;1mSection Load (0.5ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 79) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 79) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 79) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 79) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mArticle Load (0.8ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 75) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 75) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mSectionTranslation Load (0.5ms)[0m   [0mSELECT * FROM `section_translations` WHERE (`section_translations`.section_id = 75 AND (`section_translations`.`locale` IN ('de','root'))) [0m
+  [4;36;1mSection Load (0.5ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 75) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 75) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 75) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 75) ORDER BY lft[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM `sections` WHERE ((`sections`.`site_id` = 1 AND `sections`.`parent_id` = 75)) [0m
+  [4;35;1mSection Load (0.8ms)[0m   [0mSELECT * FROM `sections` WHERE ((`sections`.`site_id` = 1 AND `sections`.`parent_id` = 75)) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mSectionTranslation Load (0.6ms)[0m   [0;1mSELECT * FROM `section_translations` WHERE (`section_translations`.section_id = 6 AND (`section_translations`.`locale` IN ('de','root'))) [0m
+  [4;35;1mSection Load (0.5ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 6) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 6) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mSectionTranslation Load (0.6ms)[0m   [0mSELECT * FROM `section_translations` WHERE (`section_translations`.section_id = 7 AND (`section_translations`.`locale` IN ('de','root'))) [0m
+  [4;36;1mSection Load (0.5ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 7) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`id` = 7) ORDER BY lft[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mArticle Load (0.9ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 40) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 40) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+Rendered layouts/shared/_shop_menu (5.3ms)
+Rendered layouts/shared/_menu (1818.7ms)
+Rendered searches/_search_form (1.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`id` = 1) ORDER BY lft[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT max(`sections`.updated_at) AS max_updated_at FROM `sections` [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT max(`contents`.updated_at) AS max_updated_at FROM `contents` WHERE ( (`contents`.`type` = 'Article' ) ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mSection Load (1.5ms)[0m   [0;1mSELECT * FROM `sections` WHERE ((lft > 1 AND rgt < 72) AND (`sections`.`site_id` = 1)) ORDER BY lft[0m
+  [4;35;1mSectionTranslation Load (1.2ms)[0m   [0mSELECT `section_translations`.* FROM `section_translations` WHERE (`section_translations`.section_id IN (3,68,23,14,27,4,49,50,51,52,53,54,55,56,8,57,58,66,59,5,70,76,60,61,62,63,64,25,11,65,26,79,75,6,7,40)) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 3) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 3) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 68) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 68) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 23) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 23) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 14) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 14) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 27) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 27) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 4) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 4) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 49) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 49) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 50) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 50) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 51) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 51) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 52) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 52) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 53) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 53) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 54) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 54) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 55) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 55) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 56) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 56) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 8) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 8) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 57) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 57) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 58) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 58) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 66) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 66) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 59) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 59) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 5) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 5) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 70) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 70) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 76) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 76) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 60) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 60) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 61) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 61) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 62) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 62) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 63) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 63) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 64) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 64) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 25) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 25) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 11) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 11) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 65) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 65) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 26) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 26) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 79) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 79) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 75) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 75) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `sections` WHERE (`sections`.`parent_id` IS NULL) AND (`sections`.`site_id` = 1) ORDER BY lft LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `contents` WHERE (`contents`.section_id = 40) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `contents` WHERE (`contents`.section_id = 40) AND ( (`contents`.`type` = 'Article' ) ) ORDER BY contents.published_at DESC LIMIT 1[0m
+Rendered layouts/shared/_footer (426.5ms)
+Rendered layouts/shared/_skyscraper (3.5ms)
+Rendered layouts/shared/_foot (0.6ms)
+Completed in 2762ms (View: 2484, DB: 113) | 200 OK [http://sk.dev/]
