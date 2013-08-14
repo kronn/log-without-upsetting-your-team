@@ -1,22 +1,15 @@
-!SLIDE
+!SLIDE transition=fade
+
+&nbsp;
+
+!SLIDE transition=fade
 
 # Why the log should I hell?
-
 
 !SLIDE bullets incremental
 
 ## Logfiles provide insight
 * we hope
-
-!SLIDE top small
-
-## checking raw logs
-![lots of simultanouos, similiar things, visual noise](raw-logs.gif)
-
-<span style="font-size:0.8em">
-© by [@dcamart](https://twitter.com/dcamart) <br />
-via [Infosec Reactions](http://securityreactions.tumblr.com/post/54913301850/checking-raw-logs)
-</span>
 
 !SLIDE top small
 
@@ -31,6 +24,16 @@ according to § 51 UrhG (Urhebergesetz, German Copyright Act) solely for
 substantive explanation.  The image must not be altered. Picture quotations may only
 be used in direct connection. A correct and accurate source of information
 is essential.
+</span>
+
+!SLIDE top small
+
+## checking raw logs
+![lots of simultanouos, similiar things, visual noise](raw-logs.gif)
+
+<span style="font-size:0.8em">
+© by [@dcamart](https://twitter.com/dcamart) <br />
+via [Infosec Reactions](http://securityreactions.tumblr.com/post/54913301850/checking-raw-logs)
 </span>
 
 !SLIDE top
@@ -52,4 +55,3 @@ Appreciate the slow start of a new app…
 ## visualize crazily
 * [glTail](http://www.fudgie.org/)
 * [logstalgia](https://code.google.com/p/logstalgia/)
-

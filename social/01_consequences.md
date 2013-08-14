@@ -2,9 +2,17 @@
  
 &nbsp;
 
-!SLIDE title_slide transition=fade
+!SLIDE transition=fade
 
 # What could possibly go wrong?
+
+!SLIDE
+
+	Everything the software does for,
+	it also does *to* you.
+
+(Josh Susser || David Brady)
+on the RubyRouges
 
 !SLIDE bullets incremental
 

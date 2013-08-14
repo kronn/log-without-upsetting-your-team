@@ -2,7 +2,7 @@
  
 &nbsp;
 
-!SLIDE title_slide transition=fade
+!SLIDE transition=fade
 
 # specialised logging
 
@@ -12,7 +12,14 @@
 # Logging
 * is not bad per se
 * is always unique
-* in a separate file
+* goes in a separate file
+
+!SLIDE bullets incremental left
+
+# Own Logger
+* `log = Logger.new( filename )`
+* `log.info "F1rst L0g"`
+* `log.info "All your logz are belong to us."`
 
 !SLIDE bullets incremental
 .notes With the notification API that has been introduced with Rails 3, one can listen the the right events and write stuff to a file.
@@ -29,7 +36,7 @@
 * [Railscast 249](http://railscasts.com/episodes/249-notifications-in-rails-3)
 * [RoR API](http://api.rubyonrails.org/classes/ActiveSupport/Notifications.html)
 * [RoR Guide](http://edgeguides.rubyonrails.org/active_support_instrumentation.html#sql-active-record)
-* [Blogpost](http://mikenaberezny.com/2007/02/24/rails-logging-tips/)
+* [Blogpost with Tips](http://mikenaberezny.com/2007/02/24/rails-logging-tips/)
 
 !SLIDE top small
 .notes Code example, to be put in an initializer:
