@@ -56,6 +56,12 @@ s {
   margin-top:70px !important;
 }
 
+.small-right small {
+  text-align: right;
+  display: block;
+  margin-left: 500px;
+}
+
 .scaled img {
   width: 800px !important;
 }

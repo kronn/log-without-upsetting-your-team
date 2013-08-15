@@ -6,28 +6,28 @@
 
 # What could possibly go wrong?
 
-!SLIDE
+!SLIDE small-right
 
-	Everything the software does for,
-	it also does *to* you.
+> everything the system does for you, the system also does to you
 
-(Josh Susser || David Brady)
-on the RubyRouges
+<small>
+Leaver's&nbsp;Law as stated by David&nbsp;Brady on the RubyRogues
+</small>
 
 !SLIDE bullets incremental
 
 # IO takes time
 * we had an increase of 200 - 2500 ms
+* if you were amazon, you would die with such numbers
 * Joe Developer and Sam Salesperson don't like that
-* if you were amazon, you would did with such numbers
 
-!SLIDE
+!SLIDE bullets incremental
 
 # Monitoring breaks
 * because the format changed
 * Jane Ops and Kim DevOps don't like that
 
-!SLIDE
+!SLIDE bullets incremental
 
 # Diskusage increases
 * logs can grow really big
@@ -35,7 +35,7 @@ on the RubyRouges
 * every partition has limits
 * again, Ops-people don't like that
 
-!SLIDE
+!SLIDE bullets incremental
 
 # What else?
 * of course, we never forget such a thing
