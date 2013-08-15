@@ -1,7 +1,15 @@
-source :rubygems
+source 'https://rubygems.org'
 
-gem 'bluecloth'
+gem 'showoff', path: './vendor/schacon-showoff/'
+
+gem 'sinatra', '~> 1.3'
+gem 'redcarpet'
 gem 'nokogiri'
-gem 'showoff'
-gem 'gli'
-gem 'heroku'
+gem 'json'
+gem 'gli', '~> 2'
+gem 'parslet'
+
+group :optional do
+  gem 'rmagick'
+  gem 'pdfkit'
+end
