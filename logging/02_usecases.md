@@ -36,6 +36,10 @@ is essential.
 via [Infosec Reactions](http://securityreactions.tumblr.com/post/54913301850/checking-raw-logs)
 </span>
 
+!SLIDE
+
+# visualize the log
+
 !SLIDE top
 
 ## visualize
@@ -50,7 +54,7 @@ When did the monitoring on this machine change?
 
 Appreciate the slow start of a new app…
 
-!SLIDE top bullets incremental
+!SLIDE top bullets
 
 ## visualize crazily
 * [glTail](http://www.fudgie.org/)

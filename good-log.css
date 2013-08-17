@@ -18,7 +18,8 @@ Ubuntu Condensed
 .content p, .content h1, .content h2, .content ul li {
   font-family:"Ubuntu", "Optima", sans-serif;
 }
-.content pre, code {
+.content pre, code
+.code pre, .code code {
   font-family:"Inconsolata", "Monaco", monospace;
 }
 code {
@@ -56,6 +57,14 @@ s {
   margin-top:70px !important;
 }
 
+.commandline code {
+  font-size: 100%;
+}
+
+.commandline.bigresult code.result {
+  font-size: 120%;
+}
+
 .small-right small {
   text-align: right;
   display: block;
@@ -69,4 +78,8 @@ s {
 .image img {
   width: 600px !important;
   height: 622px !important;
+}
+
+a {
+  text-decoration: none
 }
