@@ -8,7 +8,7 @@
 
 <small>Buenos Aires Resident<br />Starship Troopers</small>
 
-!SLIDE bullets incremental
+!SLIDE bullets incremental top
 .notes There are situations in which you need to know more about an error.
 
 # possible error types
@@ -16,7 +16,7 @@
 * erratic failures
 
 
-!SLIDE bullets
+!SLIDE bullets top
 .notes If you are in the blame-game :)
 
 # possible error sources
@@ -24,14 +24,14 @@
 * external APIs
 
 
-!SLIDE bullets incremental
+!SLIDE bullets incremental top
 .notes One of the standard tools in such situations is logging.
 With the presence of the production.log it is tempting to just pour messages in there.
 
 # production.log
 * logger.info
 
-!SLIDE bullets incremental
+!SLIDE bullets incremental top
 .notes Next, you want more information and think about raising the loglevel.
 
 # raising the log level
@@ -40,7 +40,7 @@ With the presence of the production.log it is tempting to just pour messages in 
 * `config.log_level = :debug`
 
 
-!SLIDE bullets incremental top
+!SLIDE bullets incremental top big
 .notes Advise: DO NOT RAISE THE LOGLEVEL.
 I advise not to raise the loglevel for the whole application in this case.
 Actually, I cannot think of a good reason to make it more verbose than is is right now.

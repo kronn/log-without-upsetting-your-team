@@ -27,7 +27,7 @@
 	development.log (5)         - verbose logging in prose
 	                              suitable for understanding the flow
 
-!SLIDE top big code
+!SLIDE top code
 .notes rails tells us a story
 
 <pre><code>
@@ -45,7 +45,7 @@ Processing by HomeController#home as HTML
 Completed 200 OK in 58ms (Views: 51.8ms | ActiveRecord: 2.4ms)
 </code></pre>
 
-!SLIDE top big code
+!SLIDE top code
 .notes rails tells us a story
 
 <pre><code>
@@ -63,14 +63,12 @@ Processing by <b>HomeController#home</b> as <b>HTML</b>
 Completed <b>200</b> OK in <b>58ms</b> (Views: <b>51.8ms</b> | ActiveRecord: <b>2.4ms</b>)
 </code></pre>
 
-!SLIDE incremental commandline top bigresult
+!SLIDE incremental commandline top
 .notes we want just the information
 
 	$ tail -n 1 log/production.log
-	[2013-07-11 11:48:20 +0200]
-	  method=GET path=/ format=*/*
-	  controller=home action=home
-	  status=200
+	[2013-07-11 11:48:20 +0200] method=GET path=/ format=*/*
+	  controller=home action=home status=200
 	  duration=784.89 view=558.99 db=219.42
 
 	$ whatis production.log

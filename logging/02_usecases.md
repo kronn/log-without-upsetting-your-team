@@ -41,18 +41,12 @@ via [Infosec Reactions](http://securityreactions.tumblr.com/post/54913301850/che
 # visualize the log
 
 !SLIDE top
+.notes with tools like munin and collectd
 
 ## visualize
 ![lograge-visualization](one-status-month.png)
 
 When did the monitoring on this machine change?
-
-!SLIDE top
-
-## visualize II
-![lograge-visualization](two-status-week.png)
-
-Appreciate the slow start of a new app…
 
 !SLIDE top bullets
 
