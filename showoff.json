@@ -1,6 +1,8 @@
 {
   "name": "How to log without upsetting your team",
   "sections": [
+    {"section":"cover"},
+
     {"section":"intro"},
     {"section":"about"},
     {"section":"title"},
