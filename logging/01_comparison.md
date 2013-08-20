@@ -7,7 +7,7 @@
 # A look at the logs
 
 !SLIDE commandline incremental top 
-.notes rails tells us a story
+.notes rails tells us a bedtime-story for every request
 
 	$ cd rails3-app && tail log/development.log
 	Processing ArticlesController#index (for 127.0.0.1 at 2013-07-09 10:30:13) [GET]
@@ -28,7 +28,7 @@
 	                              suitable for understanding the flow
 
 !SLIDE top code
-.notes rails tells us a story
+.notes it's a lot of information
 
 <pre><code>
 Processing ArticlesController#index (for 127.0.0.1 at 2013-07-09 10:30:13) [GET]
@@ -46,7 +46,7 @@ Completed 200 OK in 58ms (Views: 51.8ms | ActiveRecord: 2.4ms)
 </code></pre>
 
 !SLIDE top code
-.notes rails tells us a story
+.notes but only few parts are really important in production
 
 <pre><code>
 Processing ArticlesController#index (for 127.0.0.1 at 2013-07-09 10:30:13) [GET]
@@ -64,7 +64,7 @@ Completed <b>200</b> OK in <b>58ms</b> (Views: <b>51.8ms</b> | ActiveRecord: <b>
 </code></pre>
 
 !SLIDE incremental commandline top
-.notes we want just the information
+.notes in production, we want just the information
 
 	$ tail -n 1 log/production.log
 	[2013-07-11 11:48:20 +0200] method=GET path=/ format=*/*

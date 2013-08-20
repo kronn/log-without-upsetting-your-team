@@ -45,6 +45,7 @@ Leaver's Law OR David Brady
 * personally, I don't like that
 
 !SLIDE bullets incremental top
+.notes it was a javascript-bug, so app-logging was not super-useful
 
 # Bug squashing
 * we raised the loglevel
