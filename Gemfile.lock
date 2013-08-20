@@ -1,5 +1,6 @@
-PATH
-  remote: ./vendor/schacon-showoff/
+GIT
+  remote: git://github.com/schacon/showoff.git
+  revision: 0e712271eceac2b4551438bdd0ec97f8345a1e2d
   specs:
     showoff (0.7.0)
       gli (~> 2)

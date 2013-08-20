@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'showoff', path: './vendor/schacon-showoff/'
+gem 'showoff', git: 'git://github.com/schacon/showoff.git'
 
 gem 'sinatra', '~> 1.3'
 gem 'redcarpet'
