@@ -89,7 +89,7 @@
 
 <p>use the arrow keys to navigate or press <code>?</code> for help</p>
 
-<p>The Talk has been given on August 18<sup>th</sup> 2013 <br/>
+<p>The Talk has been given on August 17<sup>th</sup> 2013 <br/>
 at <a href="http://2013.eurucamp.org">eurucamp 2013</a>.</p>
 </div>
 </div><div class="slide" data-transition="none"><div class="content incremental no-bullets" ref="intro/01_title">
@@ -107,6 +107,8 @@ at <a href="http://2013.eurucamp.org">eurucamp 2013</a>.</p>
 <ul>
 <li>ruby developer in operations</li>
 <li><img src="./file/about/kronn-gravatar-small.png" width="140" height="179" alt="kronn's gravatar"/>
+<li>twitter.com: <a href="http://twitter.com/der_kronn"><code>@der_kronn</code></a></li>
+<li>github.com: <a href="http://github.com/kronn"><code>kronn</code></a></li>
 </li>
 </ul>
 </div>
@@ -126,7 +128,7 @@ at <a href="http://2013.eurucamp.org">eurucamp 2013</a>.</p>
 <p><small>Buenos Aires Resident<br/>Starship Troopers</small></p>
 </div>
 </div><div class="slide" data-transition="none"><div class="content bullets incremental top" ref="bughunt/01_motivation/3">
-<p class="notes">There are situations in which you need to know more about an error.</p>
+<p class="notes">There are different types of errors</p>
 
 <h1>possible error types</h1>
 
@@ -136,7 +138,7 @@ at <a href="http://2013.eurucamp.org">eurucamp 2013</a>.</p>
 </ul>
 </div>
 </div><div class="slide" data-transition="none"><div class="content bullets top" ref="bughunt/01_motivation/4">
-<p class="notes">If you are in the blame-game :)</p>
+<p class="notes">Or, if you are in the blame-game :)</p>
 
 <h1>possible error sources</h1>
 
@@ -146,8 +148,7 @@ at <a href="http://2013.eurucamp.org">eurucamp 2013</a>.</p>
 </ul>
 </div>
 </div><div class="slide" data-transition="none"><div class="content bullets incremental top" ref="bughunt/01_motivation/5">
-<p class="notes">One of the standard tools in such situations is logging.
-With the presence of the production.log it is tempting to just pour messages in there.</p>
+<p class="notes">One of the standard tools in such situations is logging.</p>
 
 <h1>production.log</h1>
 
@@ -166,8 +167,7 @@ With the presence of the production.log it is tempting to just pour messages in 
 </ul>
 </div>
 </div><div class="slide" data-transition="none"><div class="content bullets incremental top big" ref="bughunt/01_motivation/7">
-<p class="notes">Advise: DO NOT RAISE THE LOGLEVEL.
-I advise not to raise the loglevel for the whole application in this case.
+<p class="notes">I advise not to raise the loglevel for the whole application in this case.
 Actually, I cannot think of a good reason to make it more verbose than is is right now.</p>
 
 <ul>
@@ -183,7 +183,7 @@ Actually, I cannot think of a good reason to make it more verbose than is is rig
 <h1>A look at the logs</h1>
 </div>
 </div><div class="slide" data-transition="none"><div class="content commandline incremental top" ref="logging/01_comparison/3">
-<p class="notes">rails tells us a story</p>
+<p class="notes">rails tells us a bedtime-story for every request</p>
 
 <pre><code><code class="command">$ cd rails3-app &amp;&amp; tail log/development.log</code>
 <code class="result">Processing ArticlesController#index (for 127.0.0.1 at 2013-07-09 10:30:13) [GET]
@@ -205,7 +205,7 @@ Completed 200 OK in 58ms (Views: 51.8ms | ActiveRecord: 2.4ms)
 </code></code></pre>
 </div>
 </div><div class="slide" data-transition="none"><div class="content top code" ref="logging/01_comparison/4">
-<p class="notes">rails tells us a story</p>
+<p class="notes">it's a lot of information</p>
 
 <pre><code>
 Processing ArticlesController#index (for 127.0.0.1 at 2013-07-09 10:30:13) [GET]
@@ -223,7 +223,7 @@ Completed 200 OK in 58ms (Views: 51.8ms | ActiveRecord: 2.4ms)
 </code></pre>
 </div>
 </div><div class="slide" data-transition="none"><div class="content top code" ref="logging/01_comparison/5">
-<p class="notes">rails tells us a story</p>
+<p class="notes">but only few parts are really important in production</p>
 
 <pre><code>
 Processing ArticlesController#index (for 127.0.0.1 at 2013-07-09 10:30:13) [GET]
@@ -241,7 +241,7 @@ Completed <b>200</b> OK in <b>58ms</b> (Views: <b>51.8ms</b> | ActiveRecord: <b>
 </code></pre>
 </div>
 </div><div class="slide" data-transition="none"><div class="content incremental commandline top" ref="logging/01_comparison/6">
-<p class="notes">we want just the information</p>
+<p class="notes">in production, we want just the information</p>
 
 <pre><code><code class="command">$ tail -n 1 log/production.log</code>
 <code class="result">[2013-07-11 11:48:20 +0200] method=GET path=/ format=*/*
@@ -383,6 +383,8 @@ Leaver's Law OR David Brady
 </ul>
 </div>
 </div><div class="slide" data-transition="none"><div class="content bullets incremental top" ref="social/01_consequences/8">
+<p class="notes">it was a javascript-bug, so app-logging was not super-useful</p>
+
 <h1>Bug squashing</h1>
 
 <ul>
