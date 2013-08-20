@@ -1,0 +1,527 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>How to log without upsetting your team</title>
+
+  <meta name="viewport" content="width=device-width"/>
+
+  <link rel="stylesheet" href="./css/reset.css" type="text/css"/>
+  <link rel="stylesheet" href="./css/showoff.css" type="text/css"/>
+
+  <link type="text/css" href="./css/fg.menu.css" media="screen" rel="stylesheet" />
+  <link type="text/css" href="./css/theme/ui.all.css" media="screen" rel="stylesheet" />
+  <link type="text/css" href="./css/sh_style.css" rel="stylesheet" />
+
+  <script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="./js/jquery.cycle.all.js"></script>
+	<script type="text/javascript" src="./js/jquery-print.js"></script>
+  <script type="text/javascript" src="./js/jquery.batchImageLoad.js"></script>
+
+  <script type="text/javascript" src="./js/jquery.doubletap-0.1.js"></script>
+
+  <script type="text/javascript" src="./js/fg.menu.js"></script>
+  <script type="text/javascript" src="./js/showoff.js"></script>
+  <script type="text/javascript" src="./js/jTypeWriter.js"> </script>
+  <script type="text/javascript" src="./js/sh_main.min.js"></script>
+  <script type="text/javascript" src="./js/core.js"></script>
+  <script type="text/javascript" src="./js/showoffcore.js"></script>
+  <script type="text/javascript" src="./js/coffee-script.js"></script>
+
+  
+    
+      <script type="text/javascript" src="./js/sh_lang/sh_ruby.min.js"></script>
+    
+  
+
+  
+    <link rel="stylesheet" href="./file/good-log.css" type="text/css"/>
+  
+
+  
+
+  <script type="text/javascript">
+  $(function(){
+      setupPreso(false, './');
+  });
+  </script>
+
+</head>
+
+<body>
+
+<a tabindex="0" href="#search-engines" class="fg-button fg-button-icon-right ui-widget ui-state-default ui-corner-all" id="navmenu"><span class="ui-icon ui-icon-triangle-1-s"></span>slides</a>
+<div id="navigation" class="hidden"></div>
+
+<div id="help">
+  <table>
+    <tr><td class="key">z, ?</td><td>toggle help (this)</td></tr>
+    <tr><td class="key">space, &rarr;</td><td>next slide</td></tr>
+    <tr><td class="key">shift-space, &larr;</td><td>previous slide</td></tr>
+    <tr><td class="key">d</td><td>toggle debug mode</td></tr>
+    <tr><td class="key">## &lt;ret&gt;</td><td>go to slide #</td></tr>
+    <tr><td class="key">c, t</td><td>table of contents (vi)</td></tr>
+    <tr><td class="key">f</td><td>toggle footer</td></tr>
+    <tr><td class="key">r</td><td>reload slides</td></tr>
+    <tr><td class="key">n</td><td>toggle notes</td></tr>
+    <tr><td class="key">p</td><td>run preshow</td></tr>
+    <tr><td class="key">P</td><td>toggle pause</td></tr>
+  </table>
+</div>
+
+<div class="buttonNav">
+  <input type="submit" onClick="prevStep();" value="prev"/>
+  <input type="submit" onClick="nextStep();" value="next"/>
+</div>
+
+<div id="preso">loading presentation...</div>
+<div id="footer">
+  <span id="slideInfo"></span>
+  <span id="debugInfo"></span>
+  <span id="notesInfo"></span>
+</div>
+
+<div id="slides" class="offscreen" style="display:none;">
+<div class="slide" data-transition="fade"><div class="content center title_slide" ref="cover/01_manual">
+<p>This is a showoff presentation.</p>
+
+<p>use the arrow keys to navigate or press <code>?</code> for help</p>
+
+<p>The Talk has been given on August 18<sup>th</sup> 2013 <br/>
+at <a href="http://2013.eurucamp.org">eurucamp 2013</a>.</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content incremental no-bullets" ref="intro/01_title">
+<ul>
+<li>The events described here are not fictional.</li>
+<li>Logfiles, monitoring and live apps were hurt during the events.</li>
+<li><p>Most participants survived this and are now in good health again.</p></li>
+<li><p>One bug got squashed.</p></li>
+<li><p>This is the last slide I will read completely.</p></li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental top" ref="about/01_me">
+<h2>Matthias Viehweger</h2>
+
+<ul>
+<li>ruby developer in operations</li>
+<li><img src="./file/about/kronn-gravatar-small.png" width="140" height="179" alt="kronn's gravatar"/>
+</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="title/01_overview">
+<h1>How to log without upsetting your team</h1>
+
+<h2>technical and social aspects of <code>logger.debug</code></h2>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="bughunt/01_motivation/1">
+<p/>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content small-right" ref="bughunt/01_motivation/2">
+<blockquote>
+<p>The only good Bug is a dead Bug!</p>
+</blockquote>
+
+<p><small>Buenos Aires Resident<br/>Starship Troopers</small></p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental top" ref="bughunt/01_motivation/3">
+<p class="notes">There are situations in which you need to know more about an error.</p>
+
+<h1>possible error types</h1>
+
+<ul>
+<li>inconsistent data</li>
+<li>erratic failures</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets top" ref="bughunt/01_motivation/4">
+<p class="notes">If you are in the blame-game :)</p>
+
+<h1>possible error sources</h1>
+
+<ul>
+<li>user input</li>
+<li>external APIs</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental top" ref="bughunt/01_motivation/5">
+<p class="notes">One of the standard tools in such situations is logging.
+With the presence of the production.log it is tempting to just pour messages in there.</p>
+
+<h1>production.log</h1>
+
+<ul>
+<li>logger.info</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental top" ref="bughunt/01_motivation/6">
+<p class="notes">Next, you want more information and think about raising the loglevel.</p>
+
+<h1>raising the log level</h1>
+
+<ul>
+<li><code>config.log_level = :info</code></li>
+<li><code>config.log_level = :debug</code></li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental top big" ref="bughunt/01_motivation/7">
+<p class="notes">Advise: DO NOT RAISE THE LOGLEVEL.
+I advise not to raise the loglevel for the whole application in this case.
+Actually, I cannot think of a good reason to make it more verbose than is is right now.</p>
+
+<ul>
+<li>Do not</li>
+<li>raise</li>
+<li>the loglevel</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="logging/01_comparison/1">
+<p/>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="logging/01_comparison/2">
+<h1>A look at the logs</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content commandline incremental top" ref="logging/01_comparison/3">
+<p class="notes">rails tells us a story</p>
+
+<pre><code><code class="command">$ cd rails3-app &amp;&amp; tail log/development.log</code>
+<code class="result">Processing ArticlesController#index (for 127.0.0.1 at 2013-07-09 10:30:13) [GET]
+Started GET "/" for 127.0.0.1 at 2013-07-11 00:01:14 +0200
+Processing by HomeController#home as HTML
+  Article Load (0.3ms)  SELECT "articles".* FROM "articles" LIMIT 1
+  Article Load (0.3ms)  SELECT "articles".* FROM "articles" ORDER BY position ASC
+  Rendered home/home.html.haml within layouts/default (20.7ms)
+  Rendered application/_flash.html.haml (0.1ms)
+  CACHE (0.0ms)  SELECT "articles".* FROM "articles" ORDER BY position ASC
+  Rendered search/_search_box.html.haml (6.6ms)
+  Rendered layouts/_navigation.html.haml (1.0ms)
+  Rendered application/_footer.html.haml (3.5ms)
+Completed 200 OK in 58ms (Views: 51.8ms | ActiveRecord: 2.4ms)
+
+</code><code class="command">$ whatis development.log</code>
+<code class="result">development.log (5)         - verbose logging in prose
+                              suitable for understanding the flow
+</code></code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content top code" ref="logging/01_comparison/4">
+<p class="notes">rails tells us a story</p>
+
+<pre><code>
+Processing ArticlesController#index (for 127.0.0.1 at 2013-07-09 10:30:13) [GET]
+Started GET "/" for 127.0.0.1 at 2013-07-11 00:01:14 +0200
+Processing by HomeController#home as HTML
+  Article Load (0.3ms)  SELECT "articles".* FROM "articles" LIMIT 1
+  Article Load (0.3ms)  SELECT "articles".* FROM "articles" ORDER BY position ASC
+  Rendered home/home.html.haml within layouts/default (20.7ms)
+  Rendered application/_flash.html.haml (0.1ms)
+  CACHE (0.0ms)  SELECT "articles".* FROM "articles" ORDER BY position ASC
+  Rendered search/_search_box.html.haml (6.6ms)
+  Rendered layouts/_navigation.html.haml (1.0ms)
+  Rendered application/_footer.html.haml (3.5ms)
+Completed 200 OK in 58ms (Views: 51.8ms | ActiveRecord: 2.4ms)
+</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content top code" ref="logging/01_comparison/5">
+<p class="notes">rails tells us a story</p>
+
+<pre><code>
+Processing ArticlesController#index (for 127.0.0.1 at 2013-07-09 10:30:13) [GET]
+Started <b>GET</b> <b>"/"</b> for 127.0.0.1 at 2013-07-11 00:01:14 +0200
+Processing by <b>HomeController#home</b> as <b>HTML</b>
+  Article Load (0.3ms)  SELECT "articles".* FROM "articles" LIMIT 1
+  Article Load (0.3ms)  SELECT "articles".* FROM "articles" ORDER BY position ASC
+  Rendered home/home.html.haml within layouts/default (20.7ms)
+  Rendered application/_flash.html.haml (0.1ms)
+  CACHE (0.0ms)  SELECT "articles".* FROM "articles" ORDER BY position ASC
+  Rendered search/_search_box.html.haml (6.6ms)
+  Rendered layouts/_navigation.html.haml (1.0ms)
+  Rendered application/_footer.html.haml (3.5ms)
+Completed <b>200</b> OK in <b>58ms</b> (Views: <b>51.8ms</b> | ActiveRecord: <b>2.4ms</b>)
+</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content incremental commandline top" ref="logging/01_comparison/6">
+<p class="notes">we want just the information</p>
+
+<pre><code><code class="command">$ tail -n 1 log/production.log</code>
+<code class="result">[2013-07-11 11:48:20 +0200] method=GET path=/ format=*/*
+  controller=home action=home status=200
+  duration=784.89 view=558.99 db=219.42
+
+</code><code class="command">$ whatis production.log</code>
+<code class="result">production.log (5)          - concise logging, suitable
+                              for further processing
+
+</code><code class="command">$ grep log_level config/environments/production.rb -C 1</code>
+<code class="result">  # do not change the loglevel as monitoring depends on this format
+  config.log_level = :info
+  config.lograge.enabled = true
+</code></code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="logging/01_comparison/7">
+<h1>the road so far</h1>
+
+<ul>
+<li>bughunting might involve logging</li>
+<li>each log has a <em>different</em> purpose</li>
+<li>rails' standard log is telling a story</li>
+<li>on production concise info is enough</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="logging/02_usecases/1">
+<p/>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="logging/02_usecases/2">
+<h1>Why the log should I hell?</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="logging/02_usecases/3">
+<h2>Logfiles provide insight</h2>
+
+<ul>
+<li>we hope</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content top small" ref="logging/02_usecases/4">
+<h2>checking raw logs</h2>
+
+<p><img src="./file/logging/matrix-code.jpg" width="673" height="410" alt="neo seeing programs in the matrix"/>
+
+<p><span style="font-size:0.6em">
+This image is protected by copyright. All rights to this image are located at
+Village Roadshow Pictures and/or Warner Bros. Entertainment, and any
+subsidiary or third party companies. It is used as a picture quotation
+according to &#xA7; 51 UrhG (Urhebergesetz, German Copyright Act) solely for
+substantive explanation.  The image must not be altered. Picture quotations may only
+be used in direct connection. A correct and accurate source of information
+is essential.
+</span></p>
+</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content top small" ref="logging/02_usecases/5">
+<h2>checking raw logs</h2>
+
+<p><img src="./file/logging/raw-logs.gif" width="500" height="277" alt="lots of simultanouos, similiar things, visual noise"/>
+
+<p><span style="font-size:0.8em">
+&#xA9; by <a href="https://twitter.com/dcamart">@dcamart</a> <br/>
+via <a href="http://securityreactions.tumblr.com/post/54913301850/checking-raw-logs">Infosec Reactions</a>
+</span></p>
+</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="logging/02_usecases/6">
+<h1>visualize the log</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content top" ref="logging/02_usecases/7">
+<p class="notes">with tools like munin and collectd</p>
+
+<h2>visualize</h2>
+
+<p><img src="./file/logging/one-status-month.png" width="881" height="437" alt="lograge-visualization"/>
+
+<p>When did the monitoring on this machine change?</p>
+</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content top bullets" ref="logging/02_usecases/8">
+<h2>visualize crazily</h2>
+
+<ul>
+<li><a href="http://www.fudgie.org/">glTail</a></li>
+<li><a href="https://code.google.com/p/logstalgia/">logstalgia</a></li>
+</ul>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="social/01_consequences/1">
+<p/>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="social/01_consequences/2">
+<h1>What could possibly go wrong?</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content small-right" ref="social/01_consequences/3">
+<blockquote>
+<p>everything the system does for you, <br/>
+the system also does to you</p>
+</blockquote>
+
+<p><small>
+Leaver's Law OR David Brady
+</small></p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental top" ref="social/01_consequences/4">
+<h1>IO takes time</h1>
+
+<ul>
+<li>we had an increase of 200 - 2500 ms</li>
+<li>if you were amazon, you would die with such numbers</li>
+<li>Joe Developer and Sam Salesperson don't like that</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental top" ref="social/01_consequences/5">
+<h1>Monitoring breaks</h1>
+
+<ul>
+<li>because the format changed</li>
+<li>Jane Ops and Kim DevOps don't like that</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental top" ref="social/01_consequences/6">
+<h1>Diskusage increases</h1>
+
+<ul>
+<li>logs can grow really big</li>
+<li>even with log-rotation</li>
+<li>every partition has limits</li>
+<li>again, Ops-people don't like that</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental top" ref="social/01_consequences/7">
+<h1>What else?</h1>
+
+<ul>
+<li>of course, we never forget such a thing</li>
+<li>unless we do</li>
+<li>and then discover it 2 years later</li>
+<li>personally, I don't like that</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental top" ref="social/01_consequences/8">
+<h1>Bug squashing</h1>
+
+<ul>
+<li>we raised the loglevel</li>
+<li>we spent time, sweat and tears</li>
+<li>we eventually found it</li>
+<li>the bad way</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="success/01_special_log/1">
+<p/>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="success/01_special_log/2">
+<h1>specialised logging</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental left top" ref="success/01_special_log/3">
+<h1>Own Logger</h1>
+
+<ul>
+<li><code>log = Logger.new( filename )</code></li>
+<li><code>log.info "F1rst L0g"</code></li>
+<li><code>log.info "All your logz are belong to us."</code></li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental top" ref="success/01_special_log/4">
+<p class="notes">With the notification API that has been introduced with Rails 3, one can listen the the right events and write stuff to a file.</p>
+
+<h1>Instrumentation API</h1>
+
+<ul>
+<li>exists since Rails3</li>
+<li>subscribe to events</li>
+<li>react as you want</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets top" ref="success/01_special_log/5">
+<p class="notes">the world is writing about this already</p>
+
+<h1>Links</h1>
+
+<ul>
+<li><a href="http://railscasts.com/episodes/249-notifications-in-rails-3">Railscast 249</a></li>
+<li><a href="http://api.rubyonrails.org/classes/ActiveSupport/Notifications.html">RoR API</a></li>
+<li><a href="http://edgeguides.rubyonrails.org/active_support_instrumentation.html">RoR Guide</a></li>
+<li><a href="http://mikenaberezny.com/2007/02/24/rails-logging-tips/">Blogpost with Tips</a></li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets top incremental" ref="success/01_special_log/6">
+<h1>events</h1>
+
+<ul>
+<li><code>start_processing.action_controller</code></li>
+<li><code>process_action.action_controller</code></li>
+<li><code>sql.active_record</code></li>
+<li>create your own</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content top small" ref="success/01_special_log/7">
+<p class="notes">Code example, to be put in an initializer:</p>
+
+<pre class="sh_ruby"><code>class PaymentLogger &lt; Logger
+  def format_message(severity, timestamp, progname, msg)
+    "#{timestamp.to_formatted_s(:db)} #{severity} #{msg}\n"
+  end
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content top small" ref="success/01_special_log/8">
+<p class="notes">Code example, to be put in an initializer:</p>
+
+<pre class="sh_ruby"><code>class PaymentLogger &lt; Logger
+  def format_message(severity, timestamp, progname, msg)
+    "#{timestamp.to_formatted_s(:db)} #{severity} #{msg}\n"
+  end
+end
+
+logfile = Rails.root.join('log').
+            join(Rails.env + '.payment.log')
+pay_log = PaymentLogger.new(File.open(logfile.to_s, 'a'))</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content top small" ref="success/01_special_log/9">
+<p class="notes">Code example, to be put in an initializer:</p>
+
+<pre class="sh_ruby"><code>class PaymentLogger &lt; Logger
+  def format_message(severity, timestamp, progname, msg)
+    "#{timestamp.to_formatted_s(:db)} #{severity} #{msg}\n"
+  end
+end
+
+logfile = Rails.root.join('log').
+            join(Rails.env + '.payment.log')
+pay_log = PaymentLogger.new(File.open(logfile.to_s, 'a'))
+
+ActiveSupport::Notifications.subscribe(
+  'sql.active_record'
+) do |name, start, finish, id, payload|
+  payment_logger.info payload[:sql]
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="success/02_final_thought/1">
+<p/>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental top" ref="success/02_final_thought/2">
+<p class="notes">So: put your carefully crafted log in a dedicated logfile and do not upset
+your team. With a little luck and a friendly word, you might even get a special
+graph by the ops-folks from you log so you can visually debug and detect
+recurring patterns.</p>
+
+<h1>Specialise</h1>
+
+<ul>
+<li>dedicate a logfile</li>
+<li>log your business domain</li>
+<li>graph the results</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="thanks/01_thanks/1">
+<p/>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content title_slide" ref="thanks/01_thanks/2">
+<h1>thanks</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="thanks/01_thanks/3">
+<h1>Questions?</h1>
+
+<ul>
+<li>Matthias Viehweger</li>
+<li>twitter.com: <a href="http://twitter.com/der_kronn"><code>@der_kronn</code></a></li>
+<li>github.com: <a href="http://github.com/kronn"><code>kronn</code></a></li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content incremental" ref="thanks/01_thanks/4">
+<h1>thanks, again</h1>
+
+<h2><code>@der_kronn</code></h2>
+</div>
+</div></div>
+<div id="pauseScreen">
+  
+</div>
+
+</body>
+</html>
